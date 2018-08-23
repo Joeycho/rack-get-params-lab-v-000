@@ -21,14 +21,6 @@ class Application
       end
     elsif req.path.match(/add/)
       search_term = req.params["q"]
-
-      if handle_search(search_term)include?("Couldn't")
-        handle_search(search_term)
-        @@cart << search_term
-      else
-        handle_search(search_term)
-      end
-
     else
       resp.write "Path Not Found"
     end
