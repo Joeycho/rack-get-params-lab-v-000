@@ -49,7 +49,7 @@ class Application
       @@cart << search_term
       return "added #{search_term}"
     else
-      return "No such#{search_term} in items"
+      return "No such a#{search_term} in items"
     end
   end
 end
