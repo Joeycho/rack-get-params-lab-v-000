@@ -28,7 +28,7 @@ class Application
       else
         handle_search(search_term)
       end
-      
+
     else
       resp.write "Path Not Found"
     end
