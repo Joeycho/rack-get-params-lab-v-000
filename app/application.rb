@@ -45,6 +45,7 @@ class Application
   end
 
   def check_add_item(search_term)
+    binding.pry
     if @@items.include?(search_term)
       @@cart << search_term
       return "added #{search_term}"
