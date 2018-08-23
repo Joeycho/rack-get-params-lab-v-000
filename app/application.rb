@@ -28,6 +28,7 @@ class Application
 
     elsif req.path.match(/add/)
       search_term = req.params["q"]
+      check_add_item(search_term)
     else
       resp.write "Path Not Found"
     end
@@ -40,6 +41,14 @@ class Application
       return "#{search_term} is one of our items"
     else
       return "Couldn't find #{search_term}"
+    end
+  end
+
+  def check_add_item(search_term)
+    if @@items.include?(search_term)
+      @@cart << search_term
+    else
+      return "No such#{search_term} in items"
     end
   end
 end
