@@ -19,11 +19,11 @@ class Application
     elsif req.path.match(/cart/)
       binding.pry
       if @@cart.empty?
-        @@cart.each do |i|
+        resp.write "Your cart is empty"
+      else
+         @@cart.each do |i|
           resp.write i
         end
-      else
-        resp.write "Your cart is empty"
       end
 
     elsif req.path.match(/add/)
