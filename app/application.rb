@@ -24,6 +24,7 @@ class Application
         @@cart << search_term
       else
         handle_search(search_term)
+      end
     else
       resp.write "Path Not Found"
     end
