@@ -10,8 +10,8 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
+      resp.write "#{item}\n"
       @@items.each do |item|
-        resp.write "#{item}\n"
       end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
@@ -45,7 +45,6 @@ class Application
   end
 
   def check_add_item(search_term)
-    binding.pry
     if @@items.include?(search_term)
       @@cart << search_term
       return "added #{search_term}"
