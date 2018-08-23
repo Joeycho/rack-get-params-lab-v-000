@@ -47,6 +47,7 @@ class Application
   def check_add_item(search_term)
     if @@items.include?(search_term)
       @@cart << search_term
+      resp.write "added #{search_term}"
     else
       return "No such#{search_term} in items"
     end
